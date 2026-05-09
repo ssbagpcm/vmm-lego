@@ -5,9 +5,10 @@
     "--privileged",
     "--device=/dev/kvm"
   ],
-  "postCreateCommand": "apt-get update && apt-get install -y gcc make qemu-kvm libvirt-daemon-system cpu-checker && ls -la /dev/kvm && echo 'KVM ready!'",
   "features": {
+    "ghcr.io/devcontainers/features/sshd:1": {"version": "latest"},
     "ghcr.io/devcontainers/features/common-utils:2": {}
   },
+  "postCreateCommand": "apt-get update && apt-get install -y gcc make qemu-kvm libvirt-daemon-system cpu-checker && ls -la /dev/kvm && echo 'KVM ready!'",
   "remoteUser": "root"
 }
