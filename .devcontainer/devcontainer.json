@@ -1,0 +1,13 @@
+{
+  "name": "VMM-Lego KVM Dev",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "runArgs": [
+    "--privileged",
+    "--device=/dev/kvm"
+  ],
+  "postCreateCommand": "apt-get update && apt-get install -y gcc make qemu-kvm libvirt-daemon-system cpu-checker && ls -la /dev/kvm && echo 'KVM ready!'",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {}
+  },
+  "remoteUser": "root"
+}
